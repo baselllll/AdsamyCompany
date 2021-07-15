@@ -1,11 +1,5 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
-        <div class="navbar nav_title" style="border: 0;">
-            <a href="###" class="site_title"><i class="fa fa-paw"></i> <span>Uears</span></a>
-        </div>
-
-        <div class="clearfix"></div>
-
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
@@ -32,10 +26,10 @@
                             <li><a href="{{ route('admins.create') }}">Create New Admin</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-user-secret"></i> Widgts <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-user-secret"></i> Blogs <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ route('blog.index') }}">Widgts Table</a></li>
-                            <li><a href="{{ route('blog.create') }}">Create New blog</a></li>
+                            <li><a href="{{ route('blog.index') }}">Blogs Table</a></li>
+                            <li><a href="{{ route('blog.create') }}">Create New Blogs</a></li>
                         </ul>
                     </li>
                    
@@ -45,6 +39,54 @@
                             <li><a href="{{ route('ceospecahs.create') }}">Create New ceo speech</a></li>
                         </ul>
                     </li>
+                    <li><a><i class="fa fa-user-secret"></i> services <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('services.index') }}">services Table</a></li>
+                            <li><a href="{{ route('services.create') }}">Create New services </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> works <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('works.index') }}">works Table</a></li>
+                            <li><a href="{{ route('works.create') }}">Create New works </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> gallery <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('gallery.index') }}">gallery Table</a></li>
+                            <li><a href="{{ route('gallery.create') }}">Create New gallery </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> our clients <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('clients.index') }}"> our clients Table</a></li>
+                            <li><a href="{{ route('clients.create') }}">Create New  our clients </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> Sliders <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('sliders.index') }}"> our Sliders Table</a></li>
+                            <li><a href="{{ route('sliders.create') }}">Create New  our Sliders </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> Teams <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('teams.index') }}"> our Teams Table</a></li>
+                            <li><a href="{{ route('teams.create') }}">Create New  our Teams </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> Subscribe <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('subscribes.index') }}"> our Subscribe Table</a></li>
+                            <li><a href="{{ route('subscribes.create') }}">Create New  our Subscribe </a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-user-secret"></i> Contacts <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('contacts.index') }}"> our Contacts Table</a></li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </div>
 
