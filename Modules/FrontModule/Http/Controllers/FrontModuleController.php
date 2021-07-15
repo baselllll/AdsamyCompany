@@ -5,6 +5,7 @@ namespace Modules\FrontModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class FrontModuleController extends Controller
 {
@@ -14,40 +15,48 @@ class FrontModuleController extends Controller
      */
     public function homepage()
     {
-        return view('frontmodule::layouts.pages.index');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.index',compact('lang'));
     }
 
     public function works()
     {
-        return view('frontmodule::layouts.pages.works');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.works',compact('lang'));
     }
 
     public function team()
     {
-        return view('frontmodule::layouts.pages.team');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.team',compact('lang'));
     }
 
     public function services()
     {
-        return view('frontmodule::layouts.pages.services');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.services',compact('lang'));
     }
 
     public function contact()
     {
-        return view('frontmodule::layouts.pages.contact');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.contact',compact('lang'));
     }
 
     public function post()
     {
-        return view('frontmodule::layouts.pages.post');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.post',compact('lang'));
     }
     public function blogs()
     {
-        return view('frontmodule::layouts.pages.blogs');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.blogs',compact('lang'));
     }
     public function about()
     {
-        return view('frontmodule::layouts.pages.about');
+        $lang = LaravelLocalization::getCurrentLocale();
+        return view('frontmodule::layouts.pages.about',compact('lang'));
     }
 
 }

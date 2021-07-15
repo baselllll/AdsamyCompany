@@ -11,13 +11,22 @@
 |
 */
 
-Route::prefix('frontmodule')->group(function() {
-    Route::get('/homepage', 'FrontModuleController@homepage')->name('homepage');
-    Route::get('/works', 'FrontModuleController@works')->name('works');
-    Route::get('/team', 'FrontModuleController@team')->name('team');
-    Route::get('/services', 'FrontModuleController@services')->name('services');
-    Route::get('/contact', 'FrontModuleController@contact')->name('contact');
-    Route::get('/post', 'FrontModuleController@post')->name('post');
-    Route::get('/blogs', 'FrontModuleController@blogs')->name('blogs');
-    Route::get('/about', 'FrontModuleController@about')->name('about');
-});
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ 
+        Route::prefix('frontmodule')->group(function() {
+            Route::get('/homepage', 'FrontModuleController@homepage')->name('homepage');
+            Route::get('/works', 'FrontModuleController@works')->name('works');
+            Route::get('/team', 'FrontModuleController@team')->name('team');
+            Route::get('/services', 'FrontModuleController@services')->name('services');
+            Route::get('/contact', 'FrontModuleController@contact')->name('contact');
+            Route::post('/contact-store', 'FrontModuleController@storeContact')->name('contact-store');
+            Route::get('/post', 'FrontModuleController@post')->name('post');
+            Route::get('/blogs', 'FrontModuleController@blogs')->name('blogs');
+            Route::get('/about', 'FrontModuleController@about')->name('about');
+        });
+    });

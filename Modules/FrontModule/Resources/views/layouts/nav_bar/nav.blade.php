@@ -26,6 +26,17 @@
                 <a href="#"><img src="{{ asset('front/assets/img/logo.png') }}" alt="logo"></a>
             </div>
             <div class="col-7 nav-menu d-none d-lg-block">
+                @if ($lang=="ar")
+                <ul>
+                    <li><a href="{{ url('frontmodule/homepage')}}">الصفحة الرئيسية</a></li>
+                    <li><a href="{{ url('frontmodule/about')}}">تواصل معنا</a></li>
+                    <li><a href="{{ url('frontmodule/services')}}">الخدمات</a></li>
+                    <li><a href="{{ url('frontmodule/works')}}">الاعمال</a></li>
+                    <li><a href="{{ url('frontmodule/blogs')}}">المقالات</a></li>
+                    <li><a href="{{ url('frontmodule/team')}}">الفريق</a></li>
+                    <li><a href="{{ url('frontmodule/contact')}}">تواصل معنا</a></li>
+                </ul>
+                @else
                 <ul>
                     <li><a href="{{ url('frontmodule/homepage')}}">Home</a></li>
                     <li><a href="{{ url('frontmodule/about')}}">About Us</a></li>
@@ -35,11 +46,23 @@
                     <li><a href="{{ url('frontmodule/team')}}">Team</a></li>
                     <li><a href="{{ url('frontmodule/contact')}}">Contact Us</a></li>
                 </ul>
+                @endif
+                
             </div>
             <div class="col-lg-2 additional d-none d-lg-flex">
                 <div>
                     <a href="#" class="search-toggler"><i class="far fa-search"></i></a>
-                    <a href="#" class="lang">العربية</a>
+                    <div class="d-flex justify-content-center">
+                        <ul>
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <li>
+                                    <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        {{ $properties['native'] }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-4 d-block d-lg-none">
