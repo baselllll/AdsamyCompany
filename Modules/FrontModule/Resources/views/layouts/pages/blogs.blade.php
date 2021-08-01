@@ -29,10 +29,18 @@
         <div class="display-table">
             <div class="table-cell">
                 <div class="container">
+                    @if ($lang =="ar")
+                    <div class="info wow bounce">
+                        <h3>مدوناتنا</h3>
+                        <p>قم بتنظيم واكتشاف الصورة المرئية التي تحكي قصة.</p>
+                    </div>
+                    @else
                     <div class="info wow bounce">
                         <h3>our Blogs</h3>
                         <p>Curate and discover visual that tells a story.</p>
                     </div>
+                    @endif
+                    
                 </div>
             </div>
         </div>
@@ -44,166 +52,42 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="posts blog row mb-md50">
+                        @foreach ($blogs as $row )
                         <div class="col-md-6">
                             <div class="item">
                                 <div class="post-img">
                                     <a class="img" href="post.html">
-                                        <img src="{{ asset('front/assets/img/blogs/01.jpg') }}" alt="">
+                                        <img src="{{ asset('front/images/blogs/' . $row->img) }}" alt="">
                                     </a>
                                     <div class="tag">
                                         <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
                                     </div>
                                 </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">Business Strategy Consule</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
+                               @if ($lang=="ar")
+                               <div class="cont">
+                                <h6><a href="post.html">{{ $row->ar_title }}</a></h6>
+                                <p>{{ $row->ar_content }}</p>
+                                <div class="info">
+                                    <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
+                                        الادمن</a>
+                                    <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span>{{ $row->updated_at }}</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="post-img">
-                                    <a href="post.html" class="img">
-                                        <img src="{{ asset('front/assets/img/blogs/02.jpg') }}" alt="">
-                                    </a>
-                                    <div class="tag">
-                                        <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">48 Best WordPress Themes</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
+                               @else
+                               <div class="cont">
+                                <h6><a href="post.html">{{ $row->en_title }}</a></h6>
+                                <p>{{ $row->en_content }}</p>
+                                <div class="info">
+                                    <a href="#0"><span class="author"><img src="{{ asset('front/images/blogs/' . $row->img) }}"  alt=""></span>
+                                        الادمن</a>
+                                    <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span>{{ $row->updated_at }}</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="post-img">
-                                    <a href="post.html" class="img">
-                                        <img src="{{ asset('front/assets/img/blogs/03.jpg') }}" alt="">
-                                    </a>
-                                    <div class="tag">
-                                        <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">Obsession with all things</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
-                                </div>
+                               @endif
                             </div>
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="post-img">
-                                    <a href="post.html" class="img">
-                                        <img src="{{ asset('front/assets/img/blogs/01.jpg') }}" alt="">
-                                    </a>
-                                    <div class="tag">
-                                        <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">Business Strategy Consule</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="post-img">
-                                    <a href="post.html" class="img">
-                                        <img src="{{ asset('front/assets/img/blogs/02.jpg') }}" alt="">
-                                    </a>
-                                    <div class="tag">
-                                        <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">Obsession with all things</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="post-img">
-                                    <a href="post.html" class="img">
-                                        <img src="{{ asset('front/assets/img/blogs/03.jpg') }}" alt="">
-                                    </a>
-                                    <div class="tag">
-                                        <a href="#0"><span class="icon"><i class="fas fa-tags"></i></span> Blog</a>
-                                    </div>
-                                </div>
-                                <div class="cont">
-                                    <h6><a href="post.html">Obsession with all things</a></h6>
-                                    <p>What separates Westy from all other web design agencies is the ability to offer the
-                                        most Friendly Experience you can imagine.</p>
-                                    <div class="info">
-                                        <a href="#0"><span class="author"><img src="{{ asset('front/assets/img/man.png') }}" alt=""></span>
-                                            Admin</a>
-                                        <a href="#0" class="right"><span class="icon"><i class="fas fa-clock"></i></span> 06
-                                            Aug 2017</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pagination col-lg-12 mt-20">
-                            <ul>
-                                <li>
-                                    <a href="#0"><i class="fas fa-angle-double-left"></i></a>
-                                </li>
-                                <li class="active">
-                                    <a href="#0">1</a>
-                                </li>
-                                <li>
-                                    <a href="#0">2</a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fas fa-angle-double-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-
+                        @endforeach
+                        
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -213,56 +97,69 @@
                                 <h6>Recent Posts</h6>
                             </div>
                             <ul class="recent">
+                                @foreach ($lastnews as $row )
+                                @if ($lang=="ar")
                                 <li>
                                     <div class="thum">
-                                        <img src="{{ asset('front/assets/img/blogs/01.jpg') }}" alt="">
+                                        <img src="{{ asset('front/images/blogs/' . $row->img) }}" alt="">
                                     </div>
-                                    <a href="#0">Top WordPress Themes and Plugins for Hotels.</a>
+                                    <a href="#0">{{ $row->ar_content }}.</a>
                                 </li>
+                                @else
                                 <li>
                                     <div class="thum">
-                                        <img src="{{ asset('front/assets/img/blogs/02.jpg') }}" alt="">
+                                        <img src="{{ asset('front/images/blogs/' . $row->img) }}" alt="">
                                     </div>
-                                    <a href="#0">Master These Awesome New Skills in March.</a>
+                                    <a href="#0">{{ $row->en_content }}.</a>
                                 </li>
-                                <li>
-                                    <div class="thum">
-                                        <img src="{{ asset('front/assets/img/blogs/03.jpg') }}" alt="">
-                                    </div>
-                                    <a href="#0">Best Design Items to Appeal to the Millennial.</a>
-                                </li>
+                                @endif
+                                    
+                                @endforeach
+                               
                             </ul>
                         </div>
-
                         <div class="widget">
+                           
+                            @if ($lang=="ar")
                             <div class="widget-title">
-                                <h6>Archives</h6>
+                                <h6>اللينكات المفيدة</h6>
                             </div>
                             <ul>
-                                <li><a href="#0">January 2018</a></li>
-                                <li><a href="#0">February 2018</a></li>
-                                <li><a href="#0">March 2018</a></li>
+                                
+                                <li><a href="{{ url('frontmodule/homepage')}}">الصفحة الرئيسية</a></li>
+                                <li><a href="{{ url('frontmodule/about')}}">من نحن</a></li>
+                                <li><a href="{{ url('frontmodule/services')}}">الخدمات</a></li>
+                                <li><a href="{{ url('frontmodule/works')}}">الاعمال</a></li>
+                                <li><a href="{{ url('frontmodule/blogs')}}">المقالات</a></li>
+                                <li><a href="{{ url('frontmodule/team')}}">الفريق</a></li>
+                                <li><a href="{{ url('frontmodule/contact')}}">تواصل معنا</a></li>
                             </ul>
-                        </div>
-
-                        <div class="widget">
+                            @else
                             <div class="widget-title">
                                 <h6>useful links</h6>
                             </div>
                             <ul>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>Home</a></li>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>About</a></li>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>services</a></li>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>works</a></li>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>team</a></li>
-                                <li><a href="#0"><i class="fas fa-angle-right"></i>contact</a></li>
+                                <li><a href="{{ url('frontmodule/homepage')}}">Home</a></li>
+                                <li><a href="{{ url('frontmodule/about')}}">About Us</a></li>
+                                <li><a href="{{ url('frontmodule/services')}}">Services</a></li>
+                                <li><a href="{{ url('frontmodule/works')}}">Works</a></li>
+                                <li><a href="{{ url('frontmodule/blogs')}}">Blogs</a></li>
+                                <li><a href="{{ url('frontmodule/team')}}">Team</a></li>
+                                <li><a href="{{ url('frontmodule/contact')}}">Contact Us</a></li>
                             </ul>
+                            @endif
                         </div>
 
                         <div class="widget">
+                            @if ($lang=="ar")
+                            <div class="widget-title">
+                                <h6>الالبومات</h6>
+                            </div>
+                            @else
                             <div class="widget-title">
                                 <h6>Gallery</h6>
                             </div>
+                            @endif
                             <ul class="gallery" style="position: relative; height: 0px;">
                                 <li>
                                     <a class="venobox vbox-item" data-gall="venue-gallery" href="{{ asset('front/assets/img/blogs/01.jpg') }}">

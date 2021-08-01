@@ -14,9 +14,15 @@
     <link rel="stylesheet" href="{{ asset('front/assets/vendor/venobox/venobox.css') }}">
 
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+    <style>
+        body {
+            font-family: "Amiri";
+          }
+    </style>
+    
     <!--============== remove comment for (ltr) ================-->
-    <!-- <link rel="stylesheet" href="{{ asset('front/assets/css/style-ar.css') }}"> -->
+     <link rel="stylesheet" href="{{ asset('front/assets/css/style-ar.css') }}">
 </head>
 <body>
     @include('frontmodule::layouts.nav_bar.nav')

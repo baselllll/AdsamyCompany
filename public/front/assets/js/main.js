@@ -46,13 +46,28 @@ $(document).ready(function() {
         nav: false,
         dots: true,
         navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-        loop: true,
+        loop: false,
         responsive: {
             0: { items: 1, nav: true, dots: false },
             576: { items: 2, dots: false },
             768: { items: 3 },
             992: { items: 4 },
             1200: { items: 5 }
+        }
+    });
+
+    /* ===============================  clients section  =============================== */
+    $(".pricing_tables .owl-carousel").owlCarousel({
+        autoplay: true,
+        nav: true,
+        dots: false,
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        loop: true,
+        responsive: {
+            0: { items: 1 },
+            576: { items: 1 },
+            768: { items: 2 },
+            1200: { items: 3 }
         }
     });
 

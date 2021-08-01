@@ -30,40 +30,58 @@
 
     <!--======================== start about info =============================-->
     <section class="about_info">
-        <div class="container">
-            <div class="main-heading">
-                <h2>About Us</h2>
-                <p>A welcome word that delights <br> the customer when he reads about us</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="image">
-                        <img src="assets/img/about/01.png" alt="img" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="info">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                            of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                            of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="shape"><img src="assets/img/about/shape.png" alt=""></div>
+       @if ($lang=="ar")
+       <div class="container">
+        <div class="main-heading">
+            <h2>معلومات عنا</h2>
+            <p>كلمة ترحيب تسعد العميل عندما يقرأ عنا</p>
         </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="image">
+                    <img src=" {{ asset('front/assets/img/about/01.png') }}" alt="img" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="info">
+                    <p>نحن ADSAMY ، وكالة تسويق رقمية
+                        تأسست عام 2021.
+                        نحن نتفهم أن لكل علامة تجارية احتياجات فريدة ، وأن التسويق الرقمي يدور حول استخدام البيانات تحقيق أهداف التسويق. إنه فن استخدام رؤى المستهلك لصياغة التسويق تستهدف مجموعات معينة من العملاء عبر الإنترنت. يستفيد المسوقون الرقميون من القنوات الرقمية مثل محركات البحث والقنوات الاجتماعية الوسائط ورسائل البريد الإلكتروني والمواقع والتطبيقات لمساعدة عملائهم على التواصل مع الحاليين والمحتملين عملاء.
+                        
+                        تحلى بالمسؤولية ، واعملوا معًا كفريق وتواصلوا بوضوح.
+                        فكر خارج الصندوق ، وتحدى بشكل بناء وتصرف قبل الآخرين.
+                        خلق مكان إيجابي للعمل ودعم المبادرات الأخلاقية.
+                        قدِّم دائمًا نتائج ذات جودة استثنائية وأنجزها وحسِّنها.</p>
+                </div>
+            </div>
+        </div>
+        <div class="shape"><img src="assets/img/about/shape.png" alt=""></div>
+    </div>
+       @else
+       <div class="container">
+        <div class="main-heading">
+            <h2>About Us</h2>
+            <p>A welcome word that delights <br> the customer when he reads about us</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="image">
+                    
+                    <img src=" {{ asset('front/assets/img/about/01.png') }}" alt="img" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="info">
+                    <p>Marketing Brand, Brand, Brand, Brand Brand 2021. It is the art of using consumer insights to craft marketing targeting specific groups of customers online. 24_ black and white.
+                        Think outside the box, challenge constructively and act before others.
+                                            Create a good place and strong support.
+                                            Deliver, deliver, and improve results of exceptional quality. </ p>
+                </div>
+            </div>
+        </div>
+        <div class="shape"><img src="assets/img/about/shape.png" alt=""></div>
+    </div> 
+       @endif
     </section>
     <!--======================== End about info =============================-->
 
@@ -71,6 +89,36 @@
     <section class="about_background">
         <div class="container">
             <div class="content">
+                @if ($lang=="ar")
+                <div class="row">
+                    <div class="col-md-6 box">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="info">
+                                <p>الريادة في ابتكار وتطوير أفكار برمجية إبداعية على المستوى العربي
+                                    المنطقة والعالم بأسره ، نسعى جاهدين لتوفير تقنية احترافية عالية الجودة
+                                    خدمات البرمجيات بأسعار تنافسية تتجاوز
+                                    توقعات العملاء ، ومنذ ذلك الحين </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 box">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="fal fa-bullseye-arrow"></i>
+                            </div>
+                            <div class="info">
+                                    <p>تشكيل كيان يدفع تطوير صناعة البرمجيات في
+                                        المنطقة وفق أحدث الأساليب العلمية ، وترسيخاً للابتكار
+                                        التفكير في هذه الصناعة على أساس الكوادر ذات
+                                        سنوات عديدة من الخبرة في سوق البرمجيات ، بالإضافة إلى</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @else
                 <div class="row">
                     <div class="col-md-6 box">
                         <div class="item">
@@ -99,6 +147,8 @@
                         </div>
                     </div>
                 </div>
+                @endif
+                
             </div>
         </div>
     </section>
@@ -107,9 +157,15 @@
     <!--======================== start about gallary =============================-->
     <section class="about_gallary">
         <div class="container">
-            <div class="heading">
-                <h4>We are glad to see you again</h4>
-            </div>
+           @if ($lang=="ar")
+           <div class="heading">
+            <h4>نحن سعداء لرؤيتك مرة أخرى</h4>
+        </div>
+           @else
+           <div class="heading">
+            <h4>We are glad to see you again</h4>
+        </div> 
+           @endif
             <!--=========================== start thumb ============================-->
             <div class="thumb">
                 <div id="big_image" class="owl-carousel owl-theme">
@@ -144,21 +200,24 @@
         <div class="row no-gutters ">
             <div class="col-lg-6 ">
                 <div class="info ">
+                    @if ($lang =="ar")
+                    <div class="content">
+                        <h5 class="sp_title">كلمة المدير</h5>
+                        <p>{{ $ceo->ar_content }}</p>
+                    </div>
+                    @else
                     <div class="content">
                         <h5 class="sp_title">CEO Speech</h5>
-                        <p>We are a company that always seeks the convenience of the customer, implement the required and
-                            meet his desire with accuracy and professionalism, as we have a very strong and perfect team in
-                            work and discipline We are a company
-                            that always seeks the convenience of the customer, implement the required and meet his desire
-                            with accuracy and professionalism, as we have a very strong and perfect team in work and
-                            discipline.</p>
+                        <p>{{ $ceo->en_content }}</p>
                     </div>
+                    @endif
+                    
                 </div>
             </div>
             <div class="col-lg-6 ">
                 <div class="play">
                     <a class="venobox play-btn" data-autoplay="true" data-vbtype="video"
-                        href="https://www.youtube.com/watch?v=sx63yKbuUcw&list=PL6NWULUUaNz7L22uxAYv1Lu5J8r0mdTTw"></a>
+                        href="{{ $ceo->videolink }}"></a>
                 </div>
             </div>
         </div>

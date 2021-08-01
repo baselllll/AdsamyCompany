@@ -29,7 +29,7 @@
                 @if ($lang=="ar")
                 <ul>
                     <li><a href="{{ url('frontmodule/homepage')}}">الصفحة الرئيسية</a></li>
-                    <li><a href="{{ url('frontmodule/about')}}">تواصل معنا</a></li>
+                    <li><a href="{{ url('frontmodule/about')}}">من نحن</a></li>
                     <li><a href="{{ url('frontmodule/services')}}">الخدمات</a></li>
                     <li><a href="{{ url('frontmodule/works')}}">الاعمال</a></li>
                     <li><a href="{{ url('frontmodule/blogs')}}">المقالات</a></li>

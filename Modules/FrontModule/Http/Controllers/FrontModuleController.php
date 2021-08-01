@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Modules\FrontModule\Entities\blogs;
+use Modules\FrontModule\Entities\ceospecah;
+use Modules\FrontModule\Entities\Client;
+use Modules\FrontModule\Entities\gallery;
+use Modules\FrontModule\Entities\teams;
+use Modules\FrontModule\Entities\works;
 
 class FrontModuleController extends Controller
 {
@@ -16,13 +22,22 @@ class FrontModuleController extends Controller
     public function homepage()
     {
         $lang = LaravelLocalization::getCurrentLocale();
-        return view('frontmodule::layouts.pages.index',compact('lang'));
+        $gallery = gallery::all();
+        $clients = Client::all();
+        $teams = teams::all();
+        $works = works::all();
+        $ceo = ceospecah::first();
+        // dd($gallery);
+        return view('frontmodule::layouts.pages.index',compact('works','lang','gallery','clients','teams','ceo'));
     }
 
     public function works()
     {
+        $clients = Client::all();
+        $works = works::all();
+        
         $lang = LaravelLocalization::getCurrentLocale();
-        return view('frontmodule::layouts.pages.works',compact('lang'));
+        return view('frontmodule::layouts.pages.works',compact('lang','clients','works'));
     }
 
     public function team()
@@ -50,13 +65,16 @@ class FrontModuleController extends Controller
     }
     public function blogs()
     {
+        $blogs = blogs::all();
+        $lastnews = blogs::latest()->get();
         $lang = LaravelLocalization::getCurrentLocale();
-        return view('frontmodule::layouts.pages.blogs',compact('lang'));
+        return view('frontmodule::layouts.pages.blogs',compact('lang','blogs','lastnews'));
     }
     public function about()
     {
+        $ceo = ceospecah::first();
         $lang = LaravelLocalization::getCurrentLocale();
-        return view('frontmodule::layouts.pages.about',compact('lang'));
+        return view('frontmodule::layouts.pages.about',compact('lang','ceo'));
     }
 
 }

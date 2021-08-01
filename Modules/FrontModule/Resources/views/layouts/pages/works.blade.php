@@ -30,10 +30,18 @@
         <div class="display-table">
             <div class="table-cell">
                 <div class="container">
+                    @if ($lang=="ar")
+                    <div class="info wow bounce">
+                        <h3>أعمالنا</h3>
+                        <p>لا تخجل وقم بزيارة مواقعنا .</p>
+                    </div>
+                    @else
                     <div class="info wow bounce">
                         <h3>our works</h3>
                         <p>Don't be shy and visit our sites .</p>
                     </div>
+                    @endif
+                   
                 </div>
             </div>
         </div>
@@ -43,367 +51,113 @@
     <!--======================= Start Works =========================-->
     <section class="works_section">
         <div class="container">
+            @if ($lang == 'ar')
+                <div class="main-heading">
+                    <span>نحن نمتلك الافضل</span>
+                    <h2>اعمالنا</h2>
+                </div>
+            @else
+                <div class="main-heading">
+                    <span>We give you the best</span>
+                    <h2>WORKS</h2>
+                </div>
+            @endif
+
             <ul class="tabs">
-                <li class="active" data-filter="all">all</li>
-                <li data-filter=".catogery-1">identity design</li>
-                <li data-filter=".catogery-2">web design</li>
-                <li data-filter=".catogery-3">web development</li>
-                <li data-filter=".catogery-4">mobile apps</li>
-                <li data-filter=".catogery-5">markting</li>
+                @if ($lang=="ar")
+                <li class="" data-filter="all">الكل</li>
+                <li data-filter="">تصميم الهوية</li>
+                <li data-filter="">تصميم الويب</li>
+                <li data-filter="">تطوير الويب</li>
+                <li data-filter="">تطبيقات الموبايل</li>
+                <li data-filter="">تسويق</li>
+                @else
+                <li class="" data-filter="all">all</li>
+                <li data-filter="">identity design</li>
+                <li data-filter="">web design</li>
+                <li data-filter="">web development</li>
+                <li data-filter="">mobile apps</li>
+                <li data-filter="">markting</li>
+                @endif
+               
             </ul>
             <div class="row mt-50 works_content">
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-3">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/01.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
+                @foreach ($works as $row)
+                    @if ($lang == 'ar')
+                        <div class="col-xl-3 col-lg-4 col-sm-6 mix">
+                            <div class="category-card">
+                                <div class="content-inner fl-wrap">
+                                    <div class="content-front">
+                                        <div class="cf-inner">
+                                            <div class="bg "
+                                                style="background-image:url('/front/images/works/<?php echo $row->img; ?>')">
+                                            </div>
+                                            <div class="overlay"></div>
+                                            <div class="inner">
+                                                <div class="icon-sty">
+                                                    <i class="fa fa-home"></i>
+                                                </div>
+                                                <h4>{{ $row->ar_name }}</h4>
+                                            </div>
                                         </div>
-                                        <h4>Project name</h4>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
+                                    <div class="content-back">
+                                        <div class="cf-inner">
+                                            <div class="inner">
+                                                <div class="dec-icon">
+                                                    <h4>{{ $row->ar_name }}</h4>
+                                                </div>
+                                                <a href="#" class="btn card-btn">زور</a>
+                                            </div>
                                         </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-4">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/02.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-2">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/03.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
+                    @else
+                        <div class="col-xl-3 col-lg-4 col-sm-6 mix">
+                            <div class="category-card">
+                                <div class="content-inner fl-wrap">
+                                    <div class="content-front">
+                                        <div class="cf-inner">
+                                            <div class="bg "
+                                                style="background-image:url('/front/images/works/<?php echo $row->img; ?>')">
+                                            </div>
+                                            <div class="overlay"></div>
+                                            <div class="inner">
+                                                <div class="icon-sty">
+                                                    <i class="fa fa-home"></i>
+                                                </div>
+                                                <h4>{{ $row->en_name }}</h4>
+                                            </div>
                                         </div>
-                                        <h4>Project name</h4>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
+                                    <div class="content-back">
+                                        <div class="cf-inner">
+                                            <div class="inner">
+                                                <div class="dec-icon">
+                                                    <h4>{{ $row->en_name }}</h4>
+                                                </div>
+                                                <a href="#" class="btn card-btn">زور</a>
+                                            </div>
                                         </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-1">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/04.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-5">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/01.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-2">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/02.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-5">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/03.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-3">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/04.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-1">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/01.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-2">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/02.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-4">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/03.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6 mix catogery-1">
-                    <div class="category-card">
-                        <div class="content-inner fl-wrap">
-                            <div class="content-front">
-                                <div class="cf-inner">
-                                    <div class="bg " style="background-image:url('/front/assets/img/works/04.jpg')"></div>
-                                    <div class="overlay"></div>
-                                    <div class="inner">
-                                        <div class="icon-sty">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <h4>Project name</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-back">
-                                <div class="cf-inner">
-                                    <div class="inner">
-                                        <div class="dec-icon">
-                                            <h4>Project name</h4>
-                                        </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                                        <a href="#" class="btn card-btn">visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+
+                @endforeach
             </div>
-            <!-- <div class="text-center mt-5">
+            @if ($lang == 'ar')
+            <div class="text-center mt-5">
+                <a href="#" class="main-btn solid">مشاريع اكتر</a>
+            </div>
+        @else
+            <div class="text-center mt-5">
                 <a href="#" class="main-btn solid">More Projects</a>
-            </div> -->
+            </div>
+        @endif
         </div>
     </section>
     <!--======================= End Works =========================-->
@@ -412,42 +166,26 @@
     <section class="clients_section">
         <div class="container">
             <div class="heading wow fadeIn">
+                @if ($lang=="ar")
+                <div class="main-heading">
+                    <h2>عملائنا</h2>
+                </div>
+                @else
                 <div class="main-heading">
                     <h2>Our Clients</h2>
                 </div>
+                @endif
             </div>
             <div class="content wow fadeInUp">
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/01.png') }}" alt="client">
+                    @foreach ($clients as $row)
+                        <div class="item">
+                            <div class="box">
+                                <img src="{{ asset('front/images/Client/' . $row->img) }}" alt="client">
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/02.png') }}" alt="client">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/03.png') }}" alt="client">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/04.png') }}" alt="client">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/05.png') }}" alt="client">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box">
-                            <img src="{{ asset('front/assets/img/clients/04.png') }}" alt="client">
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

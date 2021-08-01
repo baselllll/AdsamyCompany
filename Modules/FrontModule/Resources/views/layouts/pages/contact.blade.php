@@ -29,10 +29,17 @@
         <div class="display-table">
             <div class="table-cell">
                 <div class="container">
+                    @if ($lang=="ar")
+                    <div class="info wow bounce">
+                        <h3>ابقى على تواصل</h3>
+                        <p>لا تخجل وتواصل معنا.</p>
+                    </div>
+                    @else
                     <div class="info wow bounce">
                         <h3>get in touch</h3>
                         <p>Don't be shy and contact With us .</p>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -65,6 +72,15 @@
                                         style="stroke-dasharray: 15, 17; stroke-dashoffset: 0;"></path>
                                 </svg>
                             </div>
+                            @if ($lang=="ar")
+                            <span class="contact-box-item title">تحدث إلى قسم المبيعات</span>
+                            <span class="contact-box-item blurb">هل أنت مهتم ببرنامج HubSpot؟ فقط ارفع الهاتف ل
+                                الدردشة مع أحد أعضاء فريق المبيعات لدينا.</span>
+                            <div class="icons_description">
+                                <span><a class="custom_tel" href="tel:+18001234567">+1(800)123-4567</a></span>
+                                <span><a class="custom_tel" href="tel:+18001234566">+1(800)123-4566</a></span>
+                            </div>
+                            @else
                             <span class="contact-box-item title">Talk to Sales</span>
                             <span class="contact-box-item blurb">Interested in HubSpot’s software? Just pick up the phone to
                                 chat with a member of our sales team.</span>
@@ -72,6 +88,8 @@
                                 <span><a class="custom_tel" href="tel:+18001234567">+1(800)123-4567</a></span>
                                 <span><a class="custom_tel" href="tel:+18001234566">+1(800)123-4566</a></span>
                             </div>
+                            @endif
+
                         </div>
 
                     </div>
@@ -134,13 +152,23 @@
                                     </g>
                                 </svg>
                             </div>
-                            <span class="contact-box-item title">with whatsapp</span>
-                            <span class="contact-box-item blurb">Interested in HubSpot’s software? Just pick up the phone to
-                                chat with a member of our sales team.</span>
-                            <div class="icons_description">
-                                <a href="whatsapp://send?abid=phonenumber&text=Hello%2C%20World!"
-                                    class="main-btn solid">whatsapp</a>
-                            </div>
+                          @if ($lang=="ar")
+                          <span class="contact-box-item title">مع الواتس اب</span>
+                          <span class="contact-box-item blurb">هل أنت مهتم ببرنامج HubSpot؟ فقط ارفع الهاتف ل
+                            الدردشة مع أحد أعضاء فريق المبيعات لدينا.</span>
+                          <div class="icons_description">
+                              <a href="whatsapp://send?abid=phonenumber&text=Hello%2C%20World!"
+                                  class="main-btn solid">واتس اب</a>
+                          </div>
+                          @else
+                          <span class="contact-box-item title">with whatsapp</span>
+                          <span class="contact-box-item blurb">Interested in HubSpot’s software? Just pick up the phone to
+                              chat with a member of our sales team.</span>
+                          <div class="icons_description">
+                              <a href="whatsapp://send?abid=phonenumber&text=Hello%2C%20World!"
+                                  class="main-btn solid">whatsapp</a>
+                          </div>
+                          @endif
                         </div>
                     </div>
                 </div>
@@ -153,9 +181,15 @@
     <!-- ==================== Start contact Modal =================== -->
     <section class="contact-modal">
         <div class="container">
+            @if ($lang=="ar")
+            <div class="main-heading wow fadeInUp">
+                <h2>الاتصال</h2>
+            </div>
+            @else
             <div class="main-heading wow fadeInUp">
                 <h2>contact modal</h2>
             </div>
+            @endif
             <div class="row justify-content-center">
                 <div class="col-md-10 gsap-reveal">
                     <form action="#">
@@ -187,7 +221,11 @@
                             </div>
                             <div class="col-12 text-center">
                                 <a href="#" class="animated-btn">
+                                    @if ($lang=="ar")
+                                    <span>ارسال</span>
+                                    @else
                                     <span>send</span>
+                                    @endif
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
                                     <div class="button-icon"><i class="fas fa-envelope"></i></div>
